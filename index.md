@@ -13,7 +13,88 @@ I believe that I have an high level of skill for building application from scrat
 
 Here is a table of my current skill sets:
 
-||TABLE||
-|Table|
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 12px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #104E8B; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Skills</th><th>Proficiency</th><th>Experience</th><th>Level of Interest</th><th>Year Last Used</th></tr></thead><tbody>
+ <tr><td>Accenture Delivery Methods (ADM)</td><td>P4 - Expert</td><td>10 Years</td><td>Moderate</td><td>2012</td></tr>
+ <tr><td>TIBCO</td><td>P4 - Expert</td><td>8 Years</td><td>High</td><td>2012</td></tr>
+ <tr><td>Accenture Delivery Methods (ADM) Estimators</td><td>P4 - Expert</td><td>8 Years</td><td>Moderate</td><td>2012</td></tr>
+ <tr><td>Solution Planning</td><td>P4 - Expert</td><td>8 Years</td><td>High</td><td>2011</td></tr>
+ <tr><td>Client/Server Application Performance Optimization</td><td>P4 - Expert</td><td>7 Years</td><td>Moderate</td><td>2011</td></tr>
+ <tr><td>Amazon Web Services</td><td>P3 - Advanced</td><td>5 Years</td><td>High</td><td>2017</td></tr>
+ <tr><td>Microsoft Windows Azure (IaaS)</td><td>P3 - Advanced</td><td>4 Years</td><td>High</td><td>2017</td></tr>
+ <tr><td>AngularJS</td><td>P3 - Advanced</td><td>4 Years</td><td>High</td><td>2017</td></tr>
+ <tr><td>Twitter Bootstrap</td><td>P3 - Advanced</td><td>3 Years</td><td>High</td><td>2017</td></tr>
+ <tr><td>Google Maps API</td><td>P3 - Advanced</td><td>3 Years</td><td>High</td><td>2017</td></tr>
+ <tr><td>Client/Server Architectures-2 Tier</td><td>P3 - Advanced</td><td>10 Years</td><td>Moderate</td><td>2011</td></tr>
+ <tr><td>TIBCO Enterprise Message Service</td><td>P3 - Advanced</td><td>4 Years</td><td>High</td><td>2011</td></tr>
+ <tr><td>TIBCO Adapter SDK</td><td>P3 - Advanced</td><td>5 Years</td><td>Moderate</td><td>2009</td></tr>
+ <tr><td>TIBCO iProcess</td><td>P3 - Advanced</td><td>2 Years</td><td>High</td><td>2008</td></tr>
+ <tr><td>TIBCO BusinessWorks</td><td>P3 - Advanced</td><td>6 Years</td><td>High</td><td>2007</td></tr>
+ <tr><td>ERwin</td><td>P3 - Advanced</td><td>3 Years</td><td>Moderate</td><td>2007</td></tr>
+ <tr><td>Oracle BEA WebLogic Application Server</td><td>P3 - Advanced</td><td>2 Years</td><td>High</td><td>2006</td></tr>
+ <tr><td>Oracle BEA Weblogic Integration</td><td>P3 - Advanced</td><td>2 Years</td><td>High</td><td>2006</td></tr>
+ <tr><td>Cloud Computing</td><td>P2 - Proficient</td><td>3 Years</td><td>High</td><td>2015</td></tr>
+ <tr><td>Cloud IT Service Catalog Design</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2015</td></tr>
+ <tr><td>Jaspersoft Reports</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2014</td></tr>
+ <tr><td>BI Strategy</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2014</td></tr>
+ <tr><td>Cisco</td><td>P2 - Proficient</td><td>< 1 Year</td><td>Moderate</td><td>2014</td></tr>
+ <tr><td>Cloud Assessment PaaS laaS SaaS</td><td>P2 - Proficient</td><td>1 Year</td><td>High</td><td>2013</td></tr>
+ <tr><td>Cloud Managed Platforms</td><td>P2 - Proficient</td><td>1 Year</td><td>High</td><td>2013</td></tr>
+ <tr><td>Cloud-based Architectures</td><td>P2 - Proficient</td><td>1 Year</td><td>High</td><td>2013</td></tr>
+ <tr><td>C# Programming Language</td><td>P2 - Proficient</td><td>4 Years</td><td>Moderate</td><td>2007</td></tr>
+ <tr><td>Corporate Finance Industry Knowledge</td><td>P2 - Proficient</td><td>2 Years</td><td>Moderate</td><td>2007</td></tr>
+ <tr><td>TIBCO Enterprise for JMS</td><td>P2 - Proficient</td><td>2 Years</td><td>High</td><td>2007</td></tr>
+ <tr><td>TIBCO XMLCanon</td><td>P2 - Proficient</td><td>2 Years</td><td>Moderate</td><td>2007</td></tr>
+ <tr><td>SAP ABAP Development</td><td>P2 - Proficient</td><td>2 Years</td><td>Moderate</td><td>2007</td></tr>
+ <tr><td>SAP Business Workflow</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2007</td></tr>
+ <tr><td>Mobile Architecture</td><td>P2 - Proficient</td><td>2 Years</td><td>High</td><td>2006</td></tr>
+ <tr><td>RIM Blackberry Enterprise Server</td><td>P2 - Proficient</td><td>1 Year</td><td>High</td><td>2006</td></tr>
+ <tr><td>Client/Server Architectures-3 Tier</td><td>P2 - Proficient</td><td>2 Years</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Development Arch Framework: Program and Project Mgmt</td><td>P2 - Proficient</td><td>2 Years</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Microsoft SQL Server</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>SQL (Structured Query Language)</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Routing Protocols Transmission Control Protocol (TCP) / Internet Protocol (IP)</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Microsoft Windows Legacy</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Microsoft Biztalk Server</td><td>P2 - Proficient</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>ASP.NET</td><td>P2 - Proficient</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Visual Basic</td><td>P2 - Proficient</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Microsoft Visual Basic</td><td>P2 - Proficient</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Microsoft Commerce Server</td><td>P2 - Proficient</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Microsoft Internet Information Services</td><td>P2 - Proficient</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>UNIX Sun Solaris</td><td>P2 - Proficient</td><td>2 Years</td><td>High</td><td>2000</td></tr>
+ <tr><td>IBM Websphere Administration</td><td>P2 - Proficient</td><td>1 Year</td><td>High</td><td>2000</td></tr>
+ <tr><td>IBM DB2</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2000</td></tr>
+ <tr><td>Oracle Database</td><td>P2 - Proficient</td><td>1 Year</td><td>Moderate</td><td>2000</td></tr>
+ <tr><td>SAP BASIS Administration</td><td>P1 - Novice</td><td>2 Years</td><td>Moderate</td><td>2007</td></tr>
+ <tr><td>Microsoft Access</td><td>P1 - Novice</td><td>< 1 Year</td><td>Low</td><td>2001</td></tr>
+ <tr><td>Distributed Component Object Model (DCOM)</td><td>P1 - Novice</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Message Validation</td><td>P1 - Novice</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>IBM Cognos</td><td>P1 - Novice</td><td>1 Year</td><td>Moderate</td><td>2000</td></tr>
+ <tr><td>Linux</td><td>P1 - Novice</td><td>< 1 Year</td><td>High</td><td>2000</td></tr>
+ <tr><td>IBM z/OS</td><td>P1 - Novice</td><td>< 1 Year</td><td>Moderate</td><td>2000</td></tr>
+ <tr><td>.NET Programming</td><td>P0 - Trained</td><td>1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Borland Software</td><td>P0 - Trained</td><td>1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Microsoft .NET Architecture</td><td>P0 - Trained</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>Teradata</td><td>P0 - Trained</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>C & C++</td><td>P0 - Trained</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
+ <tr><td>COBOL</td><td>P0 - Trained</td><td>< 1 Year</td><td>Moderate</td><td>2000</td></tr>
+</tbody></table>
 [Link](url) and ![Image](src)
 ```
