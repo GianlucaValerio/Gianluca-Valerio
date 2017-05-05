@@ -1,0 +1,407 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <style>
+  footer {
+      position: absolute;
+      bottom: -10;
+      width: 100%;
+      /* Set thes fixed height of the footer here */
+      height: 30px;
+      background-color: #f5f5f5;
+  }
+  </style>
+  <body>
+     <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><i class="fa fa-heartbeat" aria-hidden="true"> Gianluca Valerio</i></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">                    
+                    <li><a href="./"></a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Proof of Concepts</font>
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./providers_status.html">Provider Status</a></li>                            
+                            <li><a href="./check_vm_status.html" tabindex="-1">EC2 VM Javascript check (AWS SDK for Javascript in browser)</a></li>
+                            <li><a href="./client_report.html" tabindex="-1">Client Report</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid" style="margin-top:10px">
+      <div id="overall_provider_status">
+        <div class="row clearfix"><!-- BANNER -->
+          <div class="col-md-12 column"><!-- BEGIN COL #1 FORM-->
+            <table class="table table-striped table-condensed">
+                <tr>
+                    <td style="width: 24px"><font color="green"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></font></td><td><font color=gray>Service is operating normally</font></td>
+                    <td style="width: 24px"><font color="orange"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></font></td><td>Performance issues</td>
+                    <td style="width: 24px"><font color="red"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></font></td><td>Service disruption</td>
+                    <td style="width: 24px"><font color="blue"><i class="fa fa-info" aria-hidden="true"></i></font></td><td>Informational message</td>
+                </tr>
+             </table>
+          </div>
+        </div>
+        <div class="row clearfix"><!-- MENU -->
+          <div class="col-md-12 column"><!-- BEGIN COL #1 FORM-->
+            <ul class="nav nav-tabs">
+              <li><a href="#" onclick="drawRegionsMap()">ACP Population - <font color="blue"><i class="fa fa-cloud" aria-hidden="true"></i></font></a></li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">AWS - <font color="green"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></font>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" onclick="drawRegionsMap('Amazon','yes')">AWS Population</a></li>
+                    <li class="dropdown-submenu"><a href="#" tabindex="-1">AWS Service Health per Region</a>
+                      <ul class="dropdown-toggle">
+                          <li><a href="#" onclick="drawServiceMap('1638449862')">North America</a></li>
+                          <li><a href="#" onclick="drawServiceMap('428973909')">South America</a></li>
+                          <li><a href="#" onclick="drawServiceMap('1444219619')">Europa</a></li>                    
+                          <li><a href="#" onclick="drawServiceMap('445190937')">Asia</a></li>                    
+                      </ul>   
+                    </li>                    
+                    <li><a href="#" onclick="showAWS()"><font color=red><b>AWS Lastest RSS</b></font></a></li> 
+                  </ul>
+              </li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Azure - <font color="green"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></font>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" onclick="drawRegionsMap('Azure','yes')">Azure Population</a></li>
+                    <li class="dropdown-submenu"><a href="#" tabindex="-1">Azure Service Health per Region</a>
+                      <ul class="dropdown-toggle">                          
+                          <li><a href="#" onclick="drawServiceMap('40990988')">America</a></li>
+                          <li><a href="#" onclick="drawServiceMap('1128039706')">Europa</a></li>                    
+                          <li><a href="#" onclick="drawServiceMap('593828654')">Asia</a></li>                    
+                      </ul>   
+                    </li>     
+                    <li><a href="#" onclick="drawRetrieveAzure()"><font color=red><b>Azure Service Health per Service</b></font></a></li>                    
+                  </ul>
+              </li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Google - <font color="green"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></font>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" onclick="drawRegionsMap('Google Compute Engine','yes')">Google Population</a></li>
+                    <li><a href="#" onclick="showgoogle()">Google Lastest RSS</a></li>                    
+                  </ul>
+              </li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">NTT - <font color="green"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></font>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" onclick="drawRegionsMap('NTT')">NTT Population</a></li>
+                    <li><a href="#" onclick="showNTT()">NTT Lastest RSS</a></li>                    
+                  </ul>
+              </li>                            
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Private - <font color="green">N/A</font>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" onclick="drawRegionsMap('Private Cloud','yes')">Private Population</a></li>
+                  </ul>
+              </li>   
+            </ul>
+          </div>          
+        </div>
+        <div class="row clearfix"><!-- AREA CENTER -->
+            <div class="col-md-8 column "><!-- BEGIN COL #1 FORM-->
+              <div class="row clearfix">
+                  <div id="title_regions_div"></div>
+              </div>
+              <div class="row clearfix">
+                  <div id="regions_div"></div>
+              </div>
+            </div>
+            <div class="col-md-4 column vcenter">
+              <div class="row clearfix">
+                <div id="vm_div"></div>
+              </div>
+              <div class="row clearfix">            
+                <div id="table_div" style="right"></div>
+              </div>
+            </div>
+        </div>
+        <div class="row clearfix"><!-- FOOTER -->
+          <div class="col-md-12 column vcenter"><!-- BEGIN COL #1 FORM-->
+            <div id="rss_title"><i>Feeds</i></div>
+            <div id="rss_div">
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+          <p class="text-muted"><font color=gray><i>@ 2016 - Accenture Cloud Platform</i></font></p>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      google.charts.load('upcoming', {'packages':['geochart','corechart','table']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap(provider, cleanrss) { 
+        w3IncludeHTML();      
+        var queryString ="";
+        var queryString2="";          
+        if (typeof(provider) != 'undefined' && provider != null) {
+          queryString = encodeURIComponent('SELECT E, SUM(F) where B=\''+provider+'\' group by E');
+          queryString2 = encodeURIComponent('SELECT E, SUM(F) where B=\''+ provider +'\' group by E');                    
+        }else{          
+          queryString = encodeURIComponent('SELECT E, SUM(F) group by E');
+          queryString2 = encodeURIComponent('SELECT B, SUM(F) group by B');          
+        }
+        if (typeof(cleanrss)!='undefined' && cleanrss != null ){
+          cleanTable();
+        }
+        var magicIncantation = '/gviz/tq?gid=0&headers=1&tq=';
+        $('#title_regions_div').html('<small>The geo chart below show the population of VM per provider per geo location.</small>');
+        var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1nGIIZsAqjrz8lt60EpTF0-Nwa_26JaKgIQCmTrVm-5Q' +
+                                                    magicIncantation + queryString);
+        query.send(handleResponse);
+
+        
+        var magicIncantation2 = '/gviz/tq?gid=0&headers=1&tq=';
+
+        var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1nGIIZsAqjrz8lt60EpTF0-Nwa_26JaKgIQCmTrVm-5Q' +
+                                                    magicIncantation2 + queryString2);
+        query2.send(handleResponseVMPie);
+ 
+      }
+      function handleResponse(response){
+        //cleanTable();
+        var data = response.getDataTable();
+        
+        var options = {
+            displayMode: 'markers',
+            backgroundColor: { fill: "white" },
+            datalessRegionColor: '#e3e6ea',
+            titleTextStyle: {color: 'gray', fontName: 'Arial', fontSize: 12, bold: false},
+                colorAxis: {colors: ['#167ff7', '#00397a']},                
+                tooltip: { textStyle: { fontName: 'Arial',  fontSize: 12, bold: false,      italic: false,   color: 'gray'} }
+            };
+        
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));        
+        chart.draw(data, options);
+
+      }
+      
+      function handleResponseVMPie(response){
+       //cleanTable();
+       var data = response.getDataTable();
+       var options = {'legend':'left','title':'VM Distribution', 'is3D':true, 'width':400,'height':300};
+       var chartvm = new google.visualization.PieChart(document.getElementById('vm_div'));
+       chartvm.draw(data, options);
+       handleResponseTable(data);
+      }
+      function handleResponseblankchart(response){
+       var data = response.getDataTable();
+       var options = {};       
+       handleResponseTable(data);
+      }
+      function handleResponseTable(response){
+       var data = response;
+       var options = {};
+       data.setColumnLabel(0,'Provider');
+       data.setColumnLabel(1,'# VM host')
+       var table = new google.visualization.Table(document.getElementById('table_div'));
+       table.draw(data, {});
+      }
+      function drawServiceMap(gidsheet){
+       $('#title_regions_div').html('<small>The geo chart below show the service group by geo location and status.</small>');
+       var queryString2 = encodeURIComponent('select E, C');
+       var magicIncantation2 = '/gviz/tq?gid='+gidsheet+'&headers=1&tq=';
+       var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/13J6Fj_5q5Q6OARyT3VRpnViDWOv5wCtlFeJZq0KgAtQ' +
+                                                    magicIncantation2 + queryString2);
+       query2.send(handleResponse);
+       var queryString3 = encodeURIComponent('select B,E,F,C');
+       var magicIncantation3 = '/gviz/tq?gid='+gidsheet+'&headers=1&tq=';
+       var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/13J6Fj_5q5Q6OARyT3VRpnViDWOv5wCtlFeJZq0KgAtQ' +
+                                                    magicIncantation3 + queryString3);
+       query3.send(handleResponseTableServiceList);
+       var queryString4 = encodeURIComponent('select Max(G)');
+       var magicIncantation4 = '/gviz/tq?gid='+gidsheet+'&headers=1&tq=';
+       var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/13J6Fj_5q5Q6OARyT3VRpnViDWOv5wCtlFeJZq0KgAtQ' +
+                                                    magicIncantation4 + queryString4);
+       query4.send(drawlastupdate);
+      }
+      function drawlastupdate(datain){
+        var data = datain.getDataTable();
+        var table = new google.visualization.Table(document.getElementById('vm_div'));
+        data.setColumnLabel(0,'Last Update')
+        table.draw(data, {});
+
+      }
+      function loadfeed(url){
+          /*rss.channel.item.
+          - title
+          - link
+          - pubDate
+          - guid
+          - description*/
+
+      }
+      function cleanTable(){
+        $('#rss_title').html('');
+        $('#rss_div').html('');
+      }
+      function handleResponseTableServiceList(response){
+       var data = response.getDataTable();
+       var options = {'page': 'enabled', 'pagesize': 7};
+       data.setColumnLabel(0,'Service Name');
+       data.setColumnLabel(2,'Status');
+       var table = new google.visualization.Table(document.getElementById('table_div'));
+
+       table.draw(data, options);
+       function selectHandler(e) {
+            var selection = table.getSelection();
+            var message = '';
+            
+            for (var i = 0; i < selection.length; i++) {
+              var item = selection[i];
+              if (item.row != null) {          
+                var string_ = "";      
+                var service = data.getFormattedValue(item.row, 0);
+                service = service.split("(",1);
+                var str = service.toString().substring(0, service.toString().length-1);
+                var location = data.getFormattedValue(item.row, 1);                  
+                var queryString5 = encodeURIComponent("select F where (D contains '"+str+"') and (C contains '"+location+"')");
+                var magicIncantation5 = '/gviz/tq?gid=0&headers=1&tq=';
+                var query5 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/13J6Fj_5q5Q6OARyT3VRpnViDWOv5wCtlFeJZq0KgAtQ' +
+                                                    magicIncantation5 + queryString5);
+                query5.send(displayrss);
+              }
+            }          
+       }
+
+       google.visualization.events.addListener(table, 'select', selectHandler);
+      }
+      function displayrss(datain){
+        cleanTable();
+        var data1 = datain.getDataTable();
+        rssurl = data1.getValue(0, 0);
+        parseRSS(rssurl,'rss_div');
+      }
+      function showgoogle(){
+        parseRSS('https://status.cloud.google.com/feed.atom','rss_div');  
+        drawRegionsMap('Google Compute Engine');      
+        
+      }
+      function showNTT(){
+        parseRSS('http://cloud-status.dimensiondata.com/history.atom','rss_div');  
+        drawRegionsMap('NTT');      
+      }
+      function showAWS(){
+        //parseJson('https://status.aws.amazon.com/data.json','rss_div');  
+        drawRegionsMap('Amazon');      
+      }
+      function showAzure(){
+        //parseJson('https://status.aws.amazon.com/data.json','rss_div');  
+        drawRegionsMap('Azure');      
+        cleanTable();
+        drawRetrieveAzure();
+      }
+      function drawRetrieveAzure(){
+        var form_azure = "";
+        form_azure="<div class='row clearfix'><div class='col-md-3'>Product:</div>";
+        form_azure = form_azure + "<div class='col-md-3'>Region:</div>";
+        form_azure = form_azure + "<div class='col-md-3'>Period:</div></div>";
+        form_azure =form_azure + "<div class='row clearfix'><div class='col-md-3'><select id='wa-dropdown-service' class='wa-dropdown' data-control='dropdown' name='wa-dropdown-service'> <option value='all'>All</option> <option value='academic-knowledge-api'>Academic Knowledge API</option> <option value='access-control'>Access Control Service</option> <option value='app-service\api'>API Apps</option> <option value='api-management'>API Management</option> <option value='app-service'>App Service</option> <option value='application-gateway'>Application Gateway</option> <option value='automation'>Automation</option> <option value='automation-control'>Automation &amp; Control</option> <option value='autoscale'>AutoScale</option> <option value='active-directory'>Azure Active Directory</option> <option value='active-directory-b2c'>Azure Active Directory B2C</option> <option value='active-directory-ds'>Azure Active Directory Domain Services</option> <option value='analysis-services'>Azure Analysis Services</option> <option value='container-service'>Azure Container Service</option> <option value='devtest-lab'>Azure DevTest Labs</option> <option value='dns'>Azure DNS</option> <option value='iot-hub'>Azure IoT Hub</option> <option value='monitor'>Azure Monitor</option> <option value='azure-resource-manager'>Azure Resource Manager</option> <option value='azure-microsoft-com'>azure.microsoft.com</option> <option value='backup'>Backup</option> <option value='batch'>Batch</option> <option value='autosuggest-api'>Bing Autosuggest API</option> <option value='search-api'>Bing Search APIs</option> <option value='speech-api'>Bing Speech API</option> <option value='spellcheck-api'>Bing Spell Check API</option> <option value='biztalk-services'>BizTalk Services</option> <option value='visual-studio-team-services\build'>Build &amp; Deployment/Build (XAML)</option> <option value='cdn'>CDN</option> <option value='cloud-services'>Cloud Services</option> <option value='cognitive-services'>Cognitive Services</option> <option value='computer-vision'>Computer Vision API</option> <option value='content-moderator'>Content Moderator</option> <option value='data-catalog'>Data Catalog</option> <option value='data-factory'>Data Factory</option> <option value='data-lake-analytics'>Data Lake Analytics</option> <option value='data-lake-store'>Data Lake Store</option> <option value='data-movement'>Data Movement</option> <option value='marketplace'>DataMarket</option> <option value='documentdb'>DocumentDB</option> <option value='customer-insights'>Dynamics 365 for Customer Insights</option> <option value='emotion-api'>Emotion API</option> <option value='media-services\encoding'>Encoding</option> <option value='active-directory\enterprise-state-roaming'>Enterprise State Roaming</option> <option value='event-hubs'>Event Hubs</option> <option value='expressroute'>ExpressRoute</option> <option value='face-api'>Face API</option> <option value='functions'>Functions</option> <option value='hdinsight'>HDInsight</option> <option value='hockeyapp'>HockeyApp</option> <option value='insight-analytics'>Insight &amp; Analytics</option> <option value='iot-suite'>IoT Suite</option> <option value='key-vault'>Key Vault</option> <option value='language-understanding-intelligent-services'>Language Understanding Intelligent Service</option> <option value='media-services\on-demand-streaming'>Live and On-Demand Streaming</option> <option value='load-balancer'>Load Balancer</option> <option value='visual-studio-team-services\load-test'>Load Testing</option> <option value='log-analytics'>Log Analytics</option> <option value='logic-apps'>Logic Apps</option> <option value='machine-learning'>Machine Learning</option> <option value='cache'>Managed Cache Service</option> <option value='azure-portal\gallery'>Marketplace</option> <option value='media-services'>Media Services</option> <option value='management-portal'>Microsoft Azure classic portal</option> <option value='azure-portal'>Microsoft Azure portal</option> <option value='app-service\mobile'>Mobile Apps</option> <option value='mobile-engagement'>Mobile Engagement</option> <option value='mobile-services'>Mobile Services</option> <option value='monitoring-alerts'>Monitoring and Alerts</option> <option value='multi-factor-authentication'>Multi-Factor Authentication</option> <option value='network-access'>Network Infrastructure</option> <option value='notification-hubs'>Notification Hubs</option> <option value='power-bi-embedded'>Power BI Embedded</option> <option value='protection-recovery'>Protection &amp; Recovery</option> <option value='recommendations'>Recommendations API</option> <option value='redis-cache'>Redis Cache</option> <option value='remoteapp'>RemoteApp</option> <option value='scheduler'>Scheduler</option> <option value='search'>Search</option> <option value='security-compliance'>Security &amp; Compliance</option> <option value='security-center'>Security Center</option> <option value='service-bus'>Service Bus</option> <option value='service-fabric'>Service Fabric</option> <option value='site-recovery'>Site Recovery</option> <option value='speaker-recognition-api'>Speaker Recognition API</option> <option value='sql-database\data-sync'>SQL Data Sync</option> <option value='sql-data-warehouse'>SQL Data Warehouse</option> <option value='sql-database'>SQL Database</option> <option value='sql-server-stretch-database'>SQL Server Stretch Database</option> <option value='storage'>Storage</option> <option value='storsimple'>StorSimple</option> <option value='stream-analytics'>Stream Analytics</option> <option value='text-analytics'>Text Analytics API</option> <option value='traffic-manager'>Traffic Manager</option> <option value='translator-speech-api'>Translator Speech API</option> <option value='translator-text-api'>Translator Text API</option> <option value='virtual-machine-scale-sets'>Virtual Machine Scale Sets</option> <option value='virtual-machines'>Virtual Machines</option> <option value='virtual-network'>Virtual Network</option> <option value='application-insights'>Visual Studio Application Insights</option> <option value='visual-studio-team-services'>Visual Studio Team Services</option> <option value='vpn-gateway'>VPN Gateway</option> <option value='app-service\web'>Web Apps</option> <option value='web-language-model'>Web Language Model API</option> </select></div>";
+        
+        form_azure = form_azure + "<div class='col-md-3'><select id='wa-dropdown-history-region' class='wa-dropdown' data-control='dropdown' name='wa-dropdown-history-region'> <option value='all'>All</option> <option value='global'>Global</option> <option value='us-central'>Central US</option> <option value='us-east'>East US</option> <option value='us-east-2'>East US 2</option> <option value='us-north-central'>North Central US</option> <option value='us-south-central'>South Central US</option> <option value='us-west-central'>West Central US</option> <option value='us-west'>West US</option> <option value='us-west-2'>West US 2</option> <option value='europe-north'>North Europe</option> <option value='europe-west'>West Europe</option> <option value='asia-pacific-east'>East Asia</option> <option value='asia-pacific-southeast'>Southeast Asia</option> <option value='japan-east'>Japan East</option> <option value='japan-west'>Japan West</option> <option value='brazil-south'>Brazil South</option> <option value='australia-east'>Australia East</option> <option value='australia-southeast'>Australia Southeast</option> <option value='central-india'>Central India</option> <option value='south-india'>South India</option> <option value='west-india'>West India</option> <option value='canada-central'>Canada Central</option> <option value='canada-east'>Canada East</option> <option value='germany-central'>Germany Central</option> <option value='germany-northeast'>Germany Northeast</option> <option value='united-kingdom-south'>UK South</option> <option value='united-kingdom-west'>UK West</option> </select></div>";
+        
+        form_azure = form_azure + "<div class='col-md-3'><select id='wa-dropdown-date' class='wa-dropdown' data-control='dropdown' name='wa-dropdown-date'> <option value='recent'>Most recent</option> <option value='20161107'>Last 48 hours</option> <option value='20161102'>Last week</option> <option value='20161010'>Last month</option> <option value='20160811'>Last 90 days</option> </select></div>";
+        form_azure = form_azure + "<div class='col-md-3'><a class='btn btn-default' href='#' onclick='searchAzure()' role='button'>Search</a></div>"
+        $('#rss_title').html(form_azure);
+      }
+      function parseRSS(url, container) {
+          $.ajax({
+            url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
+            dataType: 'xml',
+            success: function(data) {
+              //console.log(data.responseData.feed);
+              var table = new google.visualization.Table(document.getElementById(container));
+              var options = {'allowHtml': 'true', 'page': 'enabled', 'pagesize': 10};
+              var datainput = new google.visualization.DataTable();
+              datainput.addColumn('string','Date');
+              datainput.addColumn('string','Link');
+              
+              datainput.addColumn('string','Title');
+              datainput.addColumn('string','Description');
+              
+              /*html_in = html_in + '<i>'+data.responseData.feed.title+'</i>';
+              html_in = html_in + '</th><th>Number of Ticket: '+data.responseData.feed.entries.length+'</th></tr>';
+              */
+              alert(data.responseData);
+              if(data.responseData.feed.entries.length>0){                
+                $.each(data.responseData.feed.entries, function(key, value){                      
+                     var linkin ="<a href='"+value.link+"' target='_blank'>link</a>";
+                     datainput.addRow([value.publishedDate,linkin,value.title,value.contentSnippet]);                      
+                  });
+              }else{
+                
+              }
+              //table.setColumnProperty(1, {allowHtml: true});
+              table.draw(datainput,options);
+              //var timeupdt = (data.responseData.feed.updated !='undefined') ? data.responseData.feed.updated= : 'Not available';
+              var timeupdt ="";
+              //
+              $('#rss_title').html('<h4>'+data.responseData.feed.title+' </h4>');
+            }
+          });
+        }
+        function searchAzure(){
+          var url = 'https://azure.microsoft.com/en-us/statushistoryapi/?serviceSlug=all&regionSlug=all&startDate=20161102&page=1'
+          $.ajax({
+            url: url,
+            dataType: 'html',
+            success: function(data) {
+              $('#rss_div').html(data)
+            }
+          }); 
+        }
+        function parseJson(url, container) {
+          
+          $.ajax({
+            url: url,
+            dataType: 'json',
+            success: function(data) {
+              //console.log(data.responseData.feed);
+              var table = new google.visualization.Table(document.getElementById(container));
+              
+              var datainput = new google.visualization.DataTable();
+              datainput.addColumn('string','Date');
+              datainput.addColumn('string','Link');
+              
+              datainput.addColumn('string','Title');
+              datainput.addColumn('string','Description');
+       
+              /*html_in = html_in + '<i>'+data.responseData.feed.title+'</i>';
+              html_in = html_in + '</th><th>Number of Ticket: '+data.responseData.feed.entries.length+'</th></tr>';
+              */              
+              if(data.archive.items.length>0){                
+                $.each(data.archive.items, function(key, value){                      
+                      datainput.addRow([value.date, value.service_name,value.summary,value.description]);                      
+                  });
+              }
+              table.draw(datainput, {});
+              //var timeupdt = (data.responseData.feed.updated !='undefined') ? data.responseData.feed.updated= : 'Not available';
+              var timeupdt ="";
+              //
+              $('#rss_title').html('<h4>'+data+' </h4>');
+            }
+          });
+        }
+</script>
+  </body>
+</html>

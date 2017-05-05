@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terremoti nel Mondo</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.6.min.js"></script>
+<meta charset="UTF-8">
+<script type="text/javascript">
+  google.charts.load('upcoming', {'packages':['geochart','corechart','table','map']});
+  google.charts.setOnLoadCallback(test());
+  function test(){
+
+  }
+  function initmap(url_){
+          url = url_;
+            
+          $.ajax({
+            url: url,
+            dataType: 'jsonp',
+            crossDomain: true,
+            success: function(data) {              
+              var table = new google.visualization.Table(document.getElementById('maps'));
+              var options = {'allowHtml': 'true', 'page': 'enabled', 'pagesize': 10};
+              var datainput = new google.visualization.DataTable();
+              datainput.addColumn('number','Date');
+              datainput.addColumn('number', 'Magnitude');
+              datainput.addColumn('string','Location');
+              datainput.addColumn('string','Url');
+              datainput.addColumn('number','Latitudine');
+              datainput.addColumn('number','Longitudine');
+              /*html_in = html_in + '<i>'+data.responseData.feed.title+'</i>';
+              html_in = html_in + '</th><th>Number of Ticket: '+data.responseData.feed.entries.length+'</th></tr>';
+              */
+             dataTable2 = new google.visualization.DataTable();
+             dataTable2.addRows(1);
+             dataTable2.addColumn('number', 'LATITUDE', 'Latitude');
+             dataTable2.addColumn('number', 'LONGITUDE', 'Longitude');
+             //dataTable2.addColumn('number', 'VALUE', 'Value'); // Won't use this column, but still must define it.
+             dataTable2.addColumn('string', 'HOVER', 'HoverText');
+
+              for (var i = 0; i < data.features.length; i++) {
+                 var item = [];
+                 item = data.features[i];
+                 mag = item.properties.mag;
+                 datainput.addRow([item.properties.time,mag,item.properties.place,item.properties.url,item.geometry.coordinates[0],item.geometry.coordinates[1]]);
+                 var testuale = "";
+                 testuale = item.properties.place + " Magnitude: " + mag;
+                 dataTable2.addRow([item.geometry.coordinates[1],item.geometry.coordinates[0],testuale]);
+              }
+              //table.setColumnProperty(1, {allowHtml: true});
+              table.draw(datainput,options);
+              //var timeupdt = (data.responseData.feed.updated !='undefined') ? data.responseData.feed.updated= : 'Not available';
+              var timeupdt ="";
+              //
+              var url_ = 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/';
+
+              var options2 = {
+                zoomLevel: 6,
+                showTooltip: true,
+                showInfoWindow: true,
+                useMapTypeControl: true,
+                dataMode: 'markers',
+                icons: {
+                  blue: {
+                    normal:   url_ + 'Map-Marker-Ball-Azure-icon.png',
+                    selected: url_ + 'Map-Marker-Ball-Right-Azure-icon.png'
+                  },
+                  green: {
+                    normal:   url_ + 'Map-Marker-Push-Pin-1-Chartreuse-icon.png',
+                    selected: url_ + 'Map-Marker-Push-Pin-1-Right-Chartreuse-icon.png'
+                  },
+                  pink: {
+                    normal:   url_ + 'Map-Marker-Ball-Pink-icon.png',
+                    selected: url_ + 'Map-Marker-Ball-Right-Pink-icon.png'
+                  }
+                }
+              };             
+             var map = new google.visualization.Map(document.getElementById('geo_maps'));                             
+             map.draw(dataTable2,options2);
+            }
+          });
+      
+  }
+
+</script>
+</head>
+<body>
+<div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><i class="fa fa-heartbeat" aria-hidden="true"> Terremoti nel mondo</i></a>
+            </div>
+            <div id="status"></div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">                    
+                    <li><a href="./"></a></li>
+                    <li><a href="#" onclick="initmap('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson');">Ultime ore</a></li>
+                    <li><a href="#" onclick="initmap('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson');" tabindex="-1">Ieri</a></li>
+                    <li><a href="#" onclick="initmap('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson');" tabindex="-1">Ultimi 30 giorni</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="./">Gianluca Valerio<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid" style="margin-top:50px">
+        <div class="row clearfix">          
+          <div class="col-md-12 column">
+            <div id=geo_maps></div>
+            <div id=maps></div>
+          </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
