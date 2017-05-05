@@ -7,9 +7,6 @@ I love watching movies and personal hobby are music and painting.
 I have a degree of 5 years at conservatory for piano – when I was young I was dreaming to be a musicians but I’m not so good, while painting I believe is the best native capabilities that I have.
 A little story: Milan 1998 - during the interview of my first job, when the interviewer was making the questions, I was drawing on a small piece of paper, sometimes I use to draw to keep pressure out. At the end of the interview (not so good, not so bad), the interviewer ask me to see what I have drawn during the interview, and he was so surprised that he choose to hire me immediately (the same day he brings me to Human Resource Director), so let me say that this capability had also influenced my career.  
 
-## here a picture
-<img src=cena.gif>
-
 ## My current skills
 
 I believe that I have an high level of skill for building application from scratch, i work for 2 startup and i have always need to arrange my skill based on the technology that was needed.
