@@ -12,8 +12,8 @@ A little story: Milan 1998 - during the interview of my first job, when the inte
 I believe that I have an high level of skill for building application from scratch, i work for 2 startup and i have always need to arrange my skill based on the technology that was needed.
 
 Here is a table of my current skill sets:
-<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><th>Skills</th><th>Proficiency</th><th>Experience</th><th>Level of Interest</th><th>Year Last Used</th></tr></thead><tbody>
+<table>
+<thead><tr><th>Skills</th><th>Proficiency</th><th>Experience</th><th>Level of Interest</th><th>Year Last Used</th></tr></thead><tbody>
  <tr><td>TIBCO</td><td>P4 - Expert</td><td>8 Years</td><td>High</td><td>2012</td></tr>
  <tr><td>Solution Planning</td><td>P4 - Expert</td><td>8 Years</td><td>High</td><td>2011</td></tr>
  <tr><td>Client/Server Application Performance Optimization</td><td>P4 - Expert</td><td>7 Years</td><td>Moderate</td><td>2011</td></tr>
