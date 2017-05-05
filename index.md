@@ -13,5 +13,7 @@ I believe that I have an high level of skill for building application from scrat
 
 Here is a table of my current skill sets:
 
+||TABLE||
+|Table|
 [Link](url) and ![Image](src)
 ```
