@@ -7,29 +7,14 @@ I love watching movies and personal hobby are music and painting.
 I have a degree of 5 years at conservatory for piano – when I was young I was dreaming to be a musicians but I’m not so good, while painting I believe is the best native capabilities that I have.
 A little story: Milan 1998 - during the interview of my first job, when the interviewer was making the questions, I was drawing on a small piece of paper, sometimes I use to draw to keep pressure out. At the end of the interview (not so good, not so bad), the interviewer ask me to see what I have drawn during the interview, and he was so surprised that he choose to hire me immediately (the same day he brings me to Human Resource Director), so let me say that this capability had also influenced my career.  
 
+## here a picture
+
+
 ## My current skills
 
 I believe that I have an high level of skill for building application from scratch, i work for 2 startup and i have always need to arrange my skill based on the technology that was needed.
 
 Here is a table of my current skill sets:
-
-<style type="text/css">
-	table.tableizer-table {
-		font-size: 12px;
-		border: 1px solid #CCC; 
-		font-family: Arial, Helvetica, sans-serif;
-	} 
-	.tableizer-table td {
-		padding: 4px;
-		margin: 3px;
-		border: 1px solid #CCC;
-	}
-	.tableizer-table th {
-		background-color: #104E8B; 
-		color: #FFF;
-		font-weight: bold;
-	}
-</style>
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th>Skills</th><th>Proficiency</th><th>Experience</th><th>Level of Interest</th><th>Year Last Used</th></tr></thead><tbody>
  <tr><td>Accenture Delivery Methods (ADM)</td><td>P4 - Expert</td><td>10 Years</td><td>Moderate</td><td>2012</td></tr>
@@ -96,5 +81,4 @@ Here is a table of my current skill sets:
  <tr><td>C & C++</td><td>P0 - Trained</td><td>< 1 Year</td><td>Moderate</td><td>2001</td></tr>
  <tr><td>COBOL</td><td>P0 - Trained</td><td>< 1 Year</td><td>Moderate</td><td>2000</td></tr>
 </tbody></table>
-[Link](url) and ![Image](src)
-```
+
