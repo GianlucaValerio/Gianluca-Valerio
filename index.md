@@ -17,9 +17,7 @@ I believe that I have an high level of skill for building application from scrat
 Here is a table of my current skill sets:
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th>Skills</th><th>Proficiency</th><th>Experience</th><th>Level of Interest</th><th>Year Last Used</th></tr></thead><tbody>
- <tr><td>Accenture Delivery Methods (ADM)</td><td>P4 - Expert</td><td>10 Years</td><td>Moderate</td><td>2012</td></tr>
  <tr><td>TIBCO</td><td>P4 - Expert</td><td>8 Years</td><td>High</td><td>2012</td></tr>
- <tr><td>Accenture Delivery Methods (ADM) Estimators</td><td>P4 - Expert</td><td>8 Years</td><td>Moderate</td><td>2012</td></tr>
  <tr><td>Solution Planning</td><td>P4 - Expert</td><td>8 Years</td><td>High</td><td>2011</td></tr>
  <tr><td>Client/Server Application Performance Optimization</td><td>P4 - Expert</td><td>7 Years</td><td>Moderate</td><td>2011</td></tr>
  <tr><td>Amazon Web Services</td><td>P3 - Advanced</td><td>5 Years</td><td>High</td><td>2017</td></tr>
