@@ -1,5 +1,6 @@
-## Welcome to Gianluca Valerio Home Page
+## Welcome to Gianluca Valerio home page
 
+## My history
 My name is Gianluca Valerio.
 I grew up in Italy in  town called Livorno. My father was a lighthouse keeper, and in my young life i live in incredible places, in front of the sea and sometimes far from local small town. I love everything related to sea (windsurf, sailing, swimming …)! I have study Economics at the University of Pisa but after i finish i realize that my technical/computer science skill where predominant.  After spending 1 year in searching a job tailed to my Economics degree I join a consulting technology company of the IBM Global Service named CGI and then in 2000 I join another big company.
 I now live in Giulianova, in Abruzzo - Italy - with my wife and my two sons John 8y, and Jack 5y.
@@ -77,3 +78,5 @@ Here is a table of my current skill sets:
  <tr><td>COBOL</td><td>P0 - Trained</td><td>< 1 Year</td><td>Moderate</td><td>2000</td></tr>
 </tbody></table>
 
+## contact
+mail to: gianluca.valerio1511@gmail.com
